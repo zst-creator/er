@@ -1,0 +1,30 @@
+#include <iostream>
+
+// 求最大公约数（欧几里得算法）
+int gcd(int a, int b) {
+    while (b!= 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+// 求最小公倍数
+int lcm(int a, int b) {
+    return a * b / gcd(a, b);
+}
+
+int main() {
+    int m, n;
+    std::cout << "请输入两个正整数m和n：";
+    std::cin >> m >> n;
+
+    int greatestCommonDivisor = gcd(m, n);
+    int leastCommonMultiple = lcm(m, n);
+
+    std::cout << "最大公约数为：" << greatestCommonDivisor << std::endl;
+    std::cout << "最小公倍数为：" << leastCommonMultiple << std::endl;
+
+    return 0;
+}

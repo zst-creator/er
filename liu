@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cmath>
+
+int main() {
+    for (int i = 100; i < 1000; i++) {
+        int num = i;
+        int digit1 = num % 10;
+        num = num / 10;
+        int digit2 = num % 10;
+        num = num / 10;
+        int digit3 = num;
+        if (i == (pow(digit1, 3) + pow(digit2, 3) + pow(digit3, 3))) {
+            std::cout << i << std::endl;
+        }
+    }
+    return 0;
+}

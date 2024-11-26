@@ -1,0 +1,33 @@
+#include <iostream>
+
+// 函数用于反转数组
+void reverseArray(int *a, int n) {
+    int *start = a;
+    int *end = a + n - 1;
+    while (start < end) {
+        int temp = *start;
+        *start = *end;
+        *end = temp;
+        start++;
+        end--;
+    }
+}
+
+int main() {
+    int n;
+    std::cout << "请输入数组元素的个数: ";
+    std::cin >> n;
+    int *a = new int[n];
+    std::cout << "请输入数组的元素: ";
+    for (int i = 0; i < n; i++) {
+        std::cin >> a[i];
+    }
+    reverseArray(a, n);
+    std::cout << "反转后的数组为: ";
+    for (int i = 0; i < n; i++) {
+        std::cout << a[i] << " ";
+    }
+    std::cout << std::endl;
+    delete[] a;
+    return 0;
+}

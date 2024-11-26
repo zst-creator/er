@@ -1,0 +1,30 @@
+// 计算一个数的阶乘
+int factorial(int num) {
+    if (num == 0 || num == 1) {
+#include <iostream>
+
+        return 1;
+    } else {
+        return num * factorial(num - 1);
+    }
+}
+
+int main() {
+    int n;
+    std::cout << "请输入一个不超过20的数字n：";
+    std::cin >> n;
+
+    if (n > 20) {
+        std::cout << "输入的数字超过了20，请重新输入" << std::endl;
+        return 0;
+    }
+
+    int sum = 0;
+    for (int i = 1; i <= n; ++i) {
+        sum += factorial(i);
+    }
+
+    std::cout << "Sn的值为：" << sum << std::endl;
+
+    return 0;
+}
